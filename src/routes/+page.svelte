@@ -1,2 +1,28 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+  import { enhance } from "$app/forms";
+
+  export let data;
+  //export let form;
+</script>
+
+<form method="POST" action="?/getOwnedGames" use:enhance>
+  <!-- <label>
+    steamid:
+    <input type="text" name="steamid" autocomplete="off" required />
+  </label> -->
+  <input
+    type="text"
+    name="steamid"
+    placeholder="steamid"
+    autocomplete="off"
+    required
+  />
+  <input type="submit" />
+</form>
+
+{#if data?.success}
+  <p>{data.steamid}</p>
+  {#each data.games as game}
+    <p>{game.name}</p>
+  {/each}
+{/if}
