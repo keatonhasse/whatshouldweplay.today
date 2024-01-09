@@ -6,17 +6,17 @@
 </script>
 
 <form method="POST" action="?/getOwnedGames" use:enhance>
-  <!-- <label>
-    steamid:
-    <input type="text" name="steamid" autocomplete="off" required />
-  </label> -->
-  <input
+  <label>
+    enter steamid, name, or url:
+    <input type="text" name="input" autocomplete="off" required />
+  </label>
+  <!-- <input
     type="text"
     name="steamid"
     placeholder="steamid"
     autocomplete="off"
     required
-  />
+  /> -->
   <input type="submit" />
 </form>
 
